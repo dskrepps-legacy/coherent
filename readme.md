@@ -9,7 +9,8 @@ Read and write any config file format. Does for config files what [consolidate](
 ```javascript
 var coherent = require('coherent');
 
-// Extension can be left out or included, it will search for a supported file
+// Extension can be left out or included, it will search for a
+// supported file and a matching installed parser/stringifier
 var cfile = coherent(__dirname+'/local-config');
 
 var config = cfile.read();
@@ -33,7 +34,7 @@ Your mileage may vary as each format and/or its parser/stringifier may lack full
 ### Documentation
 
 ##### coherent(filePath[, opts])
-Returns an object with `.read` and `.write` methods. Determines the extension if it is not provided in the `filePath`. The opts object will extend the following defaults:
+Returns an object with `.read` and `.write` methods. Determines the extension by checking for accessible files. The opts object will extend the following defaults:
 
     {
         readFormats: require('parse-formats),
@@ -43,10 +44,10 @@ Returns an object with `.read` and `.write` methods. Determines the extension if
     }
 
 ##### .read([opts])
-Reads the file and attempts to parse it. `opts` will extend but not modify the opts passed to the `coherent()`.
+Synchronously reads the file and attempts to parse it. `opts` will extend but not modify the opts passed to the `coherent()`.
 
 ##### .write(data, [opts])
-Attempt to stringify `data` and write the result to the file, overriding the old file. `opts` will extend but not modify the opts passed to `coherent()`.
+Synchronously attempt to stringify `data` and write the result to the file, overriding the old file. `opts` will extend but not modify the opts passed to `coherent()`.
 
 
 ### License
