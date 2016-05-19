@@ -2,6 +2,7 @@
 
 Read and write any config file format. Does for config files what [consolidate](https://github.com/tj/consolidate.js) does for templating languages.
 
+[![NPM](https://nodei.co/npm/coherent.png)](https://nodei.co/npm/coherent/)
 
 ### Usage
 
