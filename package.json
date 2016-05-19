@@ -12,6 +12,20 @@
   },
   "author": "DSKrepps <DSKrepps@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "config",
+    "configure",
+    "configuration",
+    "json",
+    "cson",
+    "csv",
+    "hjson",
+    "ini",
+    "json5",
+    "xml",
+    "yml",
+    "yaml",
+  ],
   "dependencies": {
     "parse-formats": "^0.1.1",
     "stringify-formats": "^0.1.0"
