@@ -8,7 +8,8 @@ test('read yaml', function (t) {
 	
     var data = jsYaml.load(dataStr);
 	
-	t.deepEqual(data, coherent(__dirname+'/yaml').read());
+	t.deepEqual(data, coherent(__dirname+'/yaml').read(),
+		'should equal fixture');
 	
 	t.end();
 });

@@ -12,7 +12,8 @@ test('write yaml', function (t) {
 		
 	t.equal(
 		dataStr,
-		fs.readFileSync(__dirname+'/tmp.yaml', 'utf8')
+		fs.readFileSync(__dirname+'/tmp.yaml', 'utf8'),
+		'should equal fixture'
 	);
 	
 	fs.unlinkSync(__dirname+'/tmp.yaml');

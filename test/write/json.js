@@ -13,7 +13,8 @@ test('write json and detect given extension', function (t) {
 	
 	t.equal(
 		dataStr,
-		fs.readFileSync(__dirname+'/tmp.json', 'utf8')
+		fs.readFileSync(__dirname+'/tmp.json', 'utf8'),
+		'should equal fixture'
 	);
 	
 	fs.unlinkSync(__dirname+'/tmp.json');

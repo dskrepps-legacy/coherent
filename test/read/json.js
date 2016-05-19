@@ -7,7 +7,8 @@ test('read json', function (t) {
 	
     var data = JSON.parse(require('strip-json-comments')(dataStr));
     
-    t.deepEqual(data, coherent(__dirname+'/json').read());
+    t.deepEqual(data, coherent(__dirname+'/json').read(),
+		'should equal fixture');
     
     t.end();
 });
