@@ -1,0 +1,24 @@
+{
+  "name": "coherent",
+  "version": "0.1.0",
+  "description": "Read and write any config file format",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dskrepps/coherent.git"
+  },
+  "author": "DSKrepps <DSKrepps@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "parse-formats": "^0.1.1",
+    "stringify-formats": "^0.1.0"
+  },
+  "devDependencies": {
+    "js-yaml": "^3.6.1",
+    "strip-json-comments": "^2.0.1",
+    "tape": "^4.5.1"
+  }
+}

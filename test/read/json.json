@@ -1,0 +1,7 @@
+{
+	"hello": "world",
+	"foos": 98,
+	"bars": null,
+	// Test Comment
+	"bazzle": [42, 73]
+}
