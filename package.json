@@ -24,7 +24,7 @@
     "json5",
     "xml",
     "yml",
-    "yaml",
+    "yaml"
   ],
   "dependencies": {
     "parse-formats": "^0.1.1",
