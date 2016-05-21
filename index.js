@@ -57,39 +57,3 @@ function findPathWithExt(file) {
 	// If none found just assume we're creating a .json file
 	return file+'.json';
 }
-
-
-
-
-/*function findPathWithExt(file) {
-	
-	var resolve = require.resolve;
-	
-	try {
-		// If the ext is already present
-		return  resolve(file);
-	} catch(e) {}
-	
-	
-	// Check if a supported ext is already present
-	var presentExt = path.extname(file);
-	if( readFormats[presentExt] ) {
-		return resolve(file);
-	}
-	
-	// Try each ext until we find a file
-	var readExts = Object.keys(readFormats);
-	for (var ext of readExts) {
-		
-		try {
-			return resolve(file+ext);
-		} catch(e) { continue; }
-	}
-	
-	// If none found just assume we're creating a .json file
-	// TODO/WARNING: module.parent.filename is cached the first time coherent is required 
-	return path.resolve(
-		path.dirname(module.parent.filename),
-		file+'.json'
-	);
-}*/
