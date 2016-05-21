@@ -34,6 +34,15 @@ coherent.prototype.read = require('./read.js');
 coherent.prototype.write = require('./write.js');
 
 
+module.exports.read = function(path, opts) {
+	return coherent(path).read(opts);
+}
+
+module.exports.write = function(path, data, opts) {
+	return coherent(path).write(data, opts);
+}
+
+
 function findPathWithExt(file) {
 	
 	var exists = require('fs').accessSync; // Throws on failure

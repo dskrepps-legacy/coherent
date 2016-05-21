@@ -33,21 +33,25 @@ Your mileage may vary as each format and/or its parser/stringifier may lack full
 
 ### Documentation
 
-##### coherent(filePath[, opts])
-Returns an object with `.read` and `.write` methods. Determines the extension by checking for accessible files. The opts object will extend the following defaults:
+##### cfile = coherent(filePath[, opts])
+Returns an object with `.read` and `.write` methods. Determines the extension by searching for accessible files. The opts object will extend the following defaults:
 
     {
         readFormats: require('parse-formats),
         writeFormats: require('stringify-formats'),
         ext: '', // Specify if you want
-        encoding: 'utf8', // Passed to fs functions
+        encoding: 'utf8', // Passed to fs functions,
+        parserOpts: undefined, // Additional options object to pass to the parser/stringifier
     }
 
-##### .read([opts])
+##### cfile.read([opts])
 Synchronously reads the file and attempts to parse it. `opts` will extend but not modify the opts passed to the `coherent()`.
 
-##### .write(data, [opts])
+##### cfile.write(data, [opts])
 Synchronously attempt to stringify `data` and write the result to the file, overriding the old file. `opts` will extend but not modify the opts passed to `coherent()`.
+
+##### coherent.read(path, [opts]) and coherent.write(path, data, [opts])
+Shorter version equivalent to `coherent(path).read/.write` but will search for the file each time.
 
 
 ### License
