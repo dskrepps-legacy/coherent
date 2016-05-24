@@ -18,7 +18,7 @@ var config = cfile.read();
 config.runCount = config.runCount || 0;
 config.runCount++;
 
-cfile.save(config);
+cfile.write(config);
 ```
 
 
