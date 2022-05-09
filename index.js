@@ -24,7 +24,7 @@ function coherent(filename, opts) {
 	
 	this._opts = Object.assign({}, initialOpts, opts);
 	
-	this._path = findPathWithExt(filename+this._opts.ext);
+	this._path = findPathWithExt(filename+this._opts.ext, this._opts);
 	this._opts.ext = path.extname(this._path);
 	
 	return this;
@@ -43,18 +43,18 @@ module.exports.write = function(path, data, opts) {
 }
 
 
-function findPathWithExt(file) {
+function findPathWithExt(file, opts) {
 	
 	var exists = require('fs').accessSync; // Throws on failure
 	
 	// Check if a supported ext is already present
 	var presentExt = path.extname(file);
-	if( readFormats[presentExt] ) {
+	if( opts.readFormats[presentExt] ) {
 		return file;
 	}
 	
 	// Try each ext until we find a file
-	var readExts = Object.keys(readFormats);
+	var readExts = Object.keys(opts.readFormats);
 	for (var ext of readExts) {
 		
 		try {
